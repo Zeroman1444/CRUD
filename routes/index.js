@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const router = Router();
-const { unlink } = require('fs-extra');
+
 const path = require('path');
 
 const Usuario = require('../models/usuario');
