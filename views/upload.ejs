@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=+, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nuevo Registro</title>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <%- include("partials/return") %>
+    <div  class="container ">
+      <div  class="">
+        
+         
+              <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="mt-4 ml-4 row">
+                  Nombre: 
+                    <input type="text" name="nombre" placeholder="Nombre" class="ml-3 col-md-8 form-control"/>
+                </div>
+                <div class="mt-4 ml-4 row">
+                  Correo:
+                     <input type="text" name="correo" placeholder="Correo" class="ml-3 col-md-8 col-md-4 form-control"/>
+                </div>
+                <div class="mt-4 ml-4 row">
+                  Teléfono:
+                     <input type="number" name="telefono" placeholder="telefono" class="ml-3 col-md-4 col-md-8 form-control"/>
+                </div>
+                     <div class="mt-4 ml-4 row">
+                      Estado Civil:
+                      <select id="Sexo" name="estado_civil" class=" col-md-6 ml-3 col-md-3 custom-select">
+                    
+                    <option value="Soltero">Soltero</option>
+                    <option value="Casado">Casado</option>
+                </select>
+                </div>
+
+                 <div class="mt-4 ml-4 row">
+                  ¿Tiene Hijos?:
+.                     <input type="radio" name="tiene_hijos" value="Si" class="col-md-1"/> Si <br>
+                     <input type="radio" name="tiene_hijos" value="No" class="col-md-1"/> No 
+                </div>
+                <div class="mt-4 ml-4 col-md-12 row">
+                  Intereses:
+                     <input type="Checkbox" name="intereses" value="Libros" class="col-md-1"/> Libros <br>
+                     <input type="Checkbox" name="intereses" value="Música" class="col-md-1"/> Música <br> 
+                     <input type="Checkbox" name="intereses" value="Deportes" class="col-md-1"/> Deportes <br>
+                     <input type="Checkbox" name="intereses" value="Otros" class="col-md-1"/> Otros
+                </div>
+                       
+                
+                <div class="ml-4 form-group">
+                    <button type="submit" class="btn btn-success btn-block">
+                       Registrar
+                    </button>
+                </div>
+              </form>
+           
+       
+      </div>
+    </div>
+    
+  </body>
+</html>

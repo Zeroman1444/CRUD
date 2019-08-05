@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Editar</title>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <%- include("partials/return_editar") %>
+    <div class="container p-4">
+
+<div>
+        
+         
+              <form action="/image/<%= image._id %>/edit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%= image._id %>" class="form-control"/>
+                <div class="mt-4 ml-4 row">
+                  Nombre: 
+                    <input type="text" name="nombre" placeholder="Nombre" class="ml-3 col-md-8 form-control" value="<%= image.nombre %>" />
+                </div>
+                <div class="mt-4 ml-4 row">
+                  Correo:
+                     <input type="text" name="correo" placeholder="Correo" class="ml-3 col-md-8 col-md-4 form-control" value="<%= image.correo %>"/>
+                </div>
+                <div class="mt-4 ml-4 row">
+                  Teléfono:
+                     <input type="number" name="telefono" placeholder="telefono" class="ml-3 col-md-4 col-md-8 form-control" value="<%= image.telefono %>"/>
+                </div>
+                     <div class="mt-4 ml-4 row">
+                      Estado Civil:
+                      <select id="Sexo" name="estado_civil" class=" col-md-6 ml-3 col-md-3 custom-select">
+                    
+                    <option value="Soltero" <% if(image.estado_civil=='Soltero') {%> Selected="selected" <% } %>>Soltero</option>
+                    <option value="Casado" <% if(image.estado_civil=='Casado  ') {%> Selected="selected" <% } %>>Casado</option>
+                </select>
+                </div>
+
+                 <div class="mt-4 ml-4 row">
+                  ¿Tiene Hijos?:
+.                     <input type="radio" name="tiene_hijos" value="Si" <% if(image.tiene_hijos=='Si') {%> Checked="True" <% } %> class="col-md-1"/> Si <br>
+                     <input type="radio" name="tiene_hijos" value="No" <% if(image.tiene_hijos=='No') {%> Checked="True" <% } %> class="col-md-1"/> No 
+                </div>
+                <div class="mt-4 ml-4 col-md-12 row">
+                  Intereses:
+                     <input type="Checkbox" name="intereses" value="Libros" <% if(image.intereses.includes('Libros')) {%> Checked="True" <% } %> class="col-md-1"/> Libros <br>
+                     <input type="Checkbox" name="intereses" value="Música" <% if(image.intereses.includes('Música')) {%> Checked="True" <% } %> class="col-md-1"/> Música <br> 
+                     <input type="Checkbox" name="intereses" value="Deportes"  <% if(image.intereses.includes('Deportes')) {%> Checked="True" <% } %> class="col-md-1"/> Deportes <br>
+                     <input type="Checkbox" name="intereses" value="Otros" <% if(image.intereses.includes('Otros')) {%> Checked="True" <% } %> class="col-md-1"/> Otros
+                </div>
+                       
+                
+                <div class="ml-4 form-group">
+                    <button type="submit" class="btn btn-success btn-block">
+                       Registrar
+                    </button>
+                </div>
+                
+              </form>
+           
+       
+      </div>
+
+
+    </div>
+  </body>
+</html>
+ 
